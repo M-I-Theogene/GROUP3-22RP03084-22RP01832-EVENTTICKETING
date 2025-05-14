@@ -26,24 +26,38 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 ## Installation
 
-1. Create your project directory and clone both repositories:
-   ```bash
-   # Create project directory
-   cd /path/to/xampp/htdocs
-   mkdir ticketing_ussd
-   cd ticketing_ussd
+1. Open Command Prompt (CMD) and run the following commands to create your project:
+   ```cmd
+   :: Set working directory
+   cd /d C:\xampp\htdocs
 
-   # Clone core files from User A's repository
+   :: Create a clean project folder
+   mkdir merged_project
+   cd merged_project
+
+   :: Clone MASENGESHO PACIFIQUE's repo (core files) into temp_a
    git clone -b group-3-22RP03084-EVENTTICKETING https://github.com/pabon25/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_a
-   cp temp_a/sms.php temp_a/momo.php temp_a/util.php temp_a/composer.json temp_a/composer.lock ./
-   cp -r temp_a/vendor ./
 
-   # Clone remaining files from User B's repository
+   :: Clone MBONIMPA ISHIMWE THEOGENE's repo (UI files) into temp_b
    git clone -b group-3-22RP01832-EVENTTICKETING https://github.com/M-I-Theogene/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_b
-   cp temp_b/index.php temp_b/menu.php ./
 
-   # Clean up temporary directories
-   rm -rf temp_a temp_b
+   :: Copy selected core files from MASENGESHO PACIFIQUE's repo
+   copy temp_a\sms.php .
+   copy temp_a\momo.php .
+   copy temp_a\util.php .
+   copy temp_a\composer.json .
+   copy temp_a\composer.lock .
+
+   :: Copy vendor directory from temp_a
+   xcopy temp_a\vendor vendor /E /I /H
+
+   :: Copy selected UI files from MBONIMPA ISHIMWE THEOGENE's repo
+   copy temp_b\index.php .
+   copy temp_b\menu.php .
+
+   :: Delete temp folders
+   rmdir /S /Q temp_a
+   rmdir /S /Q temp_b
    ```
 
 2. Install PHP dependencies:
