@@ -26,38 +26,58 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 ## Installation
 
-1. Open Command Prompt (CMD) and run the following commands to create your project:
+1. Open Command Prompt (CMD) and run each command separately:
+
+   Set working directory:
    ```cmd
-   :: Set working directory
    cd /d C:\xampp\htdocs
+   ```
 
-   :: Create a clean project folder
+   Create project folder:
+   ```cmd
    mkdir merged_project
+   ```
+
+   Navigate to project folder:
+   ```cmd
    cd merged_project
+   ```
 
-   :: Clone MASENGESHO PACIFIQUE's repo (core files) into temp_a
+   Clone MASENGESHO PACIFIQUE's repository (core files):
+   ```cmd
    git clone -b group-3-22RP03084-EVENTTICKETING https://github.com/pabon25/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_a
+   ```
 
-   :: Clone MBONIMPA ISHIMWE THEOGENE's repo (UI files) into temp_b
+   Clone MBONIMPA ISHIMWE THEOGENE's repository (UI files):
+   ```cmd
    git clone -b group-3-22RP01832-EVENTTICKETING https://github.com/M-I-Theogene/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_b
+   ```
 
-   :: Copy selected core files from MASENGESHO PACIFIQUE's repo
+   Copy core files from MASENGESHO PACIFIQUE's repo:
+   ```cmd
    copy temp_a\sms.php .
    copy temp_a\momo.php .
    copy temp_a\util.php .
    copy temp_a\composer.json .
    copy temp_a\composer.lock .
+   ```
 
-   :: Copy vendor directory from temp_a
+   Copy vendor directory:
+   ```cmd
    xcopy temp_a\vendor vendor /E /I /H
+   ```
 
-   :: Copy selected UI files from MBONIMPA ISHIMWE THEOGENE's repo
+   Copy UI files from MBONIMPA ISHIMWE THEOGENE's repo:
+   ```cmd
    copy temp_b\index.php .
    copy temp_b\menu.php .
+   ```
 
-   :: Delete temp folders
+   Clean up temporary directories:
+   ```cmd
    rmdir /S /Q temp_a
    rmdir /S /Q temp_b
+   ```
    ```
 
 2. Install PHP dependencies:
