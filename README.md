@@ -82,7 +82,6 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 2. Install PHP dependencies:
    ```bash
-   cd ticketing_ussd
    composer install
    ```
 
