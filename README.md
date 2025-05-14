@@ -1,4 +1,4 @@
-# EventMint - USSD Event Ticketing System
+# USSD Event Ticketing System
 
 A USSD-based event ticketing system that allows users to purchase event tickets and manage events using their mobile phones. Built with PHP and integrated with Africa's Talking for SMS notifications.
 
