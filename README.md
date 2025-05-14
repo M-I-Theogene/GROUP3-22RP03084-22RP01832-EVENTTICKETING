@@ -1,4 +1,4 @@
-# USSD Event Ticketing System
+# EventMint - USSD Event Ticketing System
 
 A USSD-based event ticketing system that allows users to purchase event tickets and manage events using their mobile phones. Built with PHP and integrated with Africa's Talking for SMS notifications.
 
@@ -26,10 +26,24 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 ## Installation
 
-1. Clone the repository to your web server's directory:
+1. Create your project directory and clone both repositories:
    ```bash
+   # Create project directory
    cd /path/to/xampp/htdocs
-   git clone [repository-url] ticketing_ussd
+   mkdir ticketing_ussd
+   cd ticketing_ussd
+
+   # Clone core files from User A's repository
+   git clone -b group-3-22RP03084-EVENTTICKETING https://github.com/pabon25/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_a
+   cp temp_a/sms.php temp_a/momo.php temp_a/util.php temp_a/composer.json temp_a/composer.lock ./
+   cp -r temp_a/vendor ./
+
+   # Clone remaining files from User B's repository
+   git clone -b group-3-22RP01832-EVENTTICKETING https://github.com/M-I-Theogene/GROUP3-22RP03084-22RP01832-EVENTTICKETING.git temp_b
+   cp temp_b/index.php temp_b/menu.php ./
+
+   # Clean up temporary directories
+   rm -rf temp_a temp_b
    ```
 
 2. Install PHP dependencies:
@@ -77,3 +91,17 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 Note: Remember that ngrok URLs change every time you restart ngrok. For production, use a permanent domain.
 
+## Security
+
+- User PINs are hashed using PHP's password_hash function
+- Input sanitization is implemented to prevent SQL injection
+- PDO prepared statements are used for database queries
+- Transaction management ensures data consistency
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
