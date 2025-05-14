@@ -77,17 +77,3 @@ A USSD-based event ticketing system that allows users to purchase event tickets 
 
 Note: Remember that ngrok URLs change every time you restart ngrok. For production, use a permanent domain.
 
-## Security
-
-- User PINs are hashed using PHP's password_hash function
-- Input sanitization is implemented to prevent SQL injection
-- PDO prepared statements are used for database queries
-- Transaction management ensures data consistency
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
